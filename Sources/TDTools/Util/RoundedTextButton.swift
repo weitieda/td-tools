@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 8.2, *)
 public class RoundedTextButton: UIButton {
     
     init(title: String, titleColor: UIColor, bgColor: UIColor) {

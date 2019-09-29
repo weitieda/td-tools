@@ -7,7 +7,6 @@
 
 import UIKit
 
-@available(iOS 9.0, *)
 extension UIViewController {
     fileprivate func _stack(_ axis: NSLayoutConstraint.Axis = .vertical, views: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
@@ -31,7 +30,6 @@ extension UIViewController {
 
 }
 
-@available(iOS 9.0, *)
 extension UIView {
     fileprivate func _stack(_ axis: NSLayoutConstraint.Axis = .vertical, views: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
         let stackView = UIStackView(arrangedSubviews: views)
@@ -67,7 +65,6 @@ extension UIView {
     }
 }
 
-@available(iOS 9.0, *)
 extension UIStackView {
     @discardableResult
     public func withMargins(_ margins: UIEdgeInsets) -> UIStackView {

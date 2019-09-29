@@ -7,16 +7,18 @@
 
 import UIKit
 
-@available(iOS 9.0, *)
 extension UIViewController {
     
     public func showAlert(title: String, message: String, handlerOK:((UIAlertAction) -> Void)?, handlerCancel: ((UIAlertAction) -> Void)? = nil) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "OK", style: .default, handler: handlerOK)
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: handlerCancel)
+        
         alert.addAction(actionOk)
         alert.addAction(actionCancel)
         alert.preferredAction = actionOk
+        
         DispatchQueue.main.async {
             self.present(alert, animated: true, completion: nil)
         }
@@ -33,13 +35,15 @@ extension UIViewController {
     }
     
     public var appVersion: String? {
-        if let appInfo = Bundle.main.infoDictionary, let appVersion = appInfo["CFBundleShortVersionString"] as? String, let build = appInfo["CFBundleVersion"] as? String  {
-            return "\(appVersion).\(build)"
+        if let appInfo = Bundle.main.infoDictionary,
+            let appVersion = appInfo["CFBundleShortVersionString"] as? String,
+            let build = appInfo["CFBundleVersion"] as? String {
+                return "\(appVersion).\(build)"
         }
         return nil
     }
     
-    var isLandscape: Bool {
+    public var isLandscape: Bool {
         return view.frame.width > view.frame.height
     }
     
