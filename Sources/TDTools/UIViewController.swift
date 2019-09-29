@@ -10,7 +10,7 @@ import UIKit
 @available(iOS 9.0, *)
 extension UIViewController {
     
-    func showAlert(title: String, message: String, handlerOK:((UIAlertAction) -> Void)?, handlerCancel: ((UIAlertAction) -> Void)? = nil) {
+    public func showAlert(title: String, message: String, handlerOK:((UIAlertAction) -> Void)?, handlerCancel: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "OK", style: .default, handler: handlerOK)
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: handlerCancel)
@@ -22,7 +22,7 @@ extension UIViewController {
         }
     }
     
-    func showAlert(title: String, message: String?) {
+    public func showAlert(title: String, message: String?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let actionOk = UIAlertAction(title: "OK", style: .default)
         alert.addAction(actionOk)
@@ -32,7 +32,7 @@ extension UIViewController {
         }
     }
     
-    var appVersion: String? {
+    public var appVersion: String? {
         if let appInfo = Bundle.main.infoDictionary, let appVersion = appInfo["CFBundleShortVersionString"] as? String, let build = appInfo["CFBundleVersion"] as? String  {
             return "\(appVersion).\(build)"
         }
