@@ -42,10 +42,5 @@ extension UIViewController {
         }
         return nil
     }
-    
-    public var isLandscape: Bool {
-        return view.frame.width > view.frame.height
-    }
-    
 }
 
