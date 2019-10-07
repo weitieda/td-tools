@@ -94,16 +94,12 @@ extension DiskStorage: ReadableStorage {
     }
 }
 
-class CodableStorage {
+public class DiskCache {
     private let storage: DiskStorage
     private let decoder: JSONDecoder
     private let encoder: JSONEncoder
 
-    init(
-        storage: DiskStorage,
-        decoder: JSONDecoder = .init(),
-        encoder: JSONEncoder = .init()
-    ) {
+    init(storage: DiskStorage, decoder: JSONDecoder = .init(), encoder: JSONEncoder = .init()) {
         self.storage = storage
         self.decoder = decoder
         self.encoder = encoder
