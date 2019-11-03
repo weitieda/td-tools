@@ -49,17 +49,12 @@ extension UIView {
     public func hstack(_ views: UIView..., spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
         return _stack(.horizontal, views: views, spacing: spacing, alignment: alignment, distribution: distribution)
     }
-    
-    
-    @discardableResult
-    public func vstack(_ views: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
-        let v = views.map {$0}
-        return _stack(.vertical, views: v, spacing: spacing, alignment: alignment, distribution: distribution)
-    }
-    
-    @discardableResult
-    public func hstack(_ views: [UIView], spacing: CGFloat = 0, alignment: UIStackView.Alignment = .fill, distribution: UIStackView.Distribution = .fill) -> UIStackView {
-        let v = views.map {$0}
-        return _stack(.horizontal, views: v, spacing: spacing, alignment: alignment, distribution: distribution)
+}
+
+extension UIStackView {
+   func withMargins(_ margins: UIEdgeInsets) -> UIStackView {
+        layoutMargins = margins
+        isLayoutMarginsRelativeArrangement = true
+        return self
     }
 }
