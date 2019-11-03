@@ -52,7 +52,7 @@ extension UIView {
 }
 
 extension UIStackView {
-   func withMargins(_ margins: UIEdgeInsets) -> UIStackView {
+   public func withMargins(_ margins: UIEdgeInsets) -> UIStackView {
         layoutMargins = margins
         isLayoutMarginsRelativeArrangement = true
         return self
