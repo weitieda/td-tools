@@ -1,6 +1,6 @@
 # TDTools
 
-Personal commonly userd utilities
+Personal commonly used utilities
 
 
 ### DiskCache
